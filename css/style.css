@@ -1,0 +1,220 @@
+/* Base styles voor de algemene opmaak */
+body {
+  background-image: url(/img/realmaind.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header" "main" "footer";
+}
+
+header, footer {
+  color: #fff;
+  padding: 1.3em;
+}
+
+button, a {
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav .brand-name {
+  margin-right: auto;
+}
+
+nav .main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav button {
+  font-size: 16px;
+}
+
+nav button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Overige secties */
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+.section-title, .section-text {
+  position: relative;
+  font-size: large;
+  color: white;
+  margin-top: var(--mb-2);
+  margin-bottom: var(--mb-4);
+  text-align: center;
+}
+
+/* Over mij sectie */
+#about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+#about img {
+  max-width: 100%;
+}
+
+#about-text {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Vaardigheden sectie */
+#skill-group {
+  display: flex;
+  justify-content: center;
+}
+
+.skill {
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+.skill-name {
+  margin-bottom: 5px;
+}
+
+.skill-bar {
+  height: 20px;
+  border-radius: 10px;
+}
+
+.skill-level {
+  height: 100%;
+  border-radius: 10px;
+  background-color: #4caf50;
+  text-align: center;
+  line-height: 20px;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+.work__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* zorgt voor gelijke ruimte tussen de items */
+  margin-left: 175px;
+}
+
+.work__img {
+  flex: 1 1 30%; /* zorgt dat elk item maximaal 30% van de breedte van de container inneemt */
+  margin-bottom: 20px; /* Voegt wat ruimte toe tussen de rijen */
+}
+
+
+.work-title {
+  font-size: xx-large;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.skills-all {
+  width: 100%;
+}
+
+.skills_img {
+  width: 50%;
+  height: 50%;
+}
+
+.tabel {
+  display: flex;
+  justify-content: center;
+}
+/* Vaardigheden breedtes */
+.html { width: 80%; }
+.css { width: 90%; }
+.php { width: 55%; }
+.react { width: 60%; }
+.Laravel { width: 65%; }
+.OOP { width: 60%; }
+
+/* Algemene styling */
+.seperator {
+  border: 1px solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+footer {
+  text-align: center; /* Center de inhoud van de footer */
+  padding: 2px;
+}
+
+.footer-content, .footer-icons {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+
+
+
+
+/* Media query voor telefoons */
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav .brand-name {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  nav .main-nav {
+    flex-direction: column;
+  }
+
+  nav button {
+    margin-bottom: 0.5em;
+  }
+}
+.footer-content, .footer-icons {
+  flex-direction: row; /* Plaats de items in een rij voor kleinere schermen */
+  justify-content: center; /* Center de items verticaal */
+}
+
+.footer-icons a {
+  margin: 0 10px; /* Minder ruimte tussen de iconen */
+}
