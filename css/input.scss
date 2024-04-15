@@ -1,0 +1,158 @@
+// Variabelen
+$bg-color-footer: rgba(255, 255, 255, 0.1);
+$bg-color-skill: #4caf50;
+$text-color: #fff;
+
+// Mixins
+@mixin flex-center($direction) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+// Basis styling
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(/img/realmaind.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header" "main" "footer";
+}
+
+header, footer {
+  color: $text-color;
+  padding: 1.3em;
+}
+
+button, a {
+  color: $text-color;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $bg-color-footer;
+  }
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin: 5px;
+}
+
+// Navigatie
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .brand-name {
+    margin-right: auto;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    button {
+      font-size: 16px;
+    }
+  }
+}
+
+// Secties
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+.section-title, .section-text {
+  position: relative;
+  font-size: large;
+  color: $text-color;
+  margin-top: var(--mb-2);
+  margin-bottom: var(--mb-4);
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+#about-text {
+  padding: 10px;
+}
+
+#skill-group {
+  display: flex;
+  justify-content: center;
+}
+
+.skill {
+  margin-bottom: 20px;
+  max-width: 100%;
+
+  .skill-name {
+    margin-bottom: 5px;
+  }
+
+  .skill-bar {
+    height: 20px;
+    border-radius: 10px;
+
+    .skill-level {
+      height: 100%;
+      border-radius: 10px;
+      background-color: $bg-color-skill;
+      text-align: center;
+      line-height: 20px;
+      color: $text-color;
+      font-weight: bold;
+    }
+  }
+}
+
+// Media Queries
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+
+    .brand-name {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .main-nav {
+      flex-direction: column;
+
+      button {
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+
+  .footer-content, .footer-icons {
+    flex-direction: row;
+    justify-content: center;
+
+    a {
+      margin: 0 10px;
+    }
+  }
+}
