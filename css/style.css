@@ -111,6 +111,7 @@ section {
 
 .skill-name {
   margin-bottom: 5px;
+  color: #fff;
 }
 
 .skill-bar {
@@ -188,7 +189,9 @@ footer {
   align-items: center; 
 }
 
-
+.Error-title, .Error-text {
+  color: #fff;
+}
 
 
 /* Media query voor telefoons */
